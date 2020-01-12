@@ -3,14 +3,34 @@ package com.tutorial.kafkasimple.model;
 public class Event {
     private String key;
     private String value;
+    private int partition;
+    private long offset;
 
     public Event(){
 
     }
 
-    public Event(String key,String value){
+    public Event(String key,String value, int partition, long offset){
         this.key = key;
         this.value = value;
+        this.partition = partition;
+        this.offset = offset;
+    }
+
+    public int getPartition() {
+        return partition;
+    }
+
+    public void setPartition(int partition) {
+        this.partition = partition;
+    }
+
+    public long getOffset() {
+        return offset;
+    }
+
+    public void setOffset(long offset) {
+        this.offset = offset;
     }
 
     public String getKey() {
